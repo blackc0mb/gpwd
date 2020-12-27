@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">    
+    <head>
+        <title>Password generator</title>
+        <link rel="stylesheet" type="text/css" href="styles.css"/>
+        <script type="text/javascript" src="pwd.js"></script>
+    </head>
+    <body>
+        <h1>Password Generator</h1>
+        <!-- <h3>Random password generator</h3> -->
+        <div id="data">
+            <p>A simple page where you can generate random passwords for your personal use. The passwords will not save in any database or text file, so the passwords are generated on the fly, just copy to the clipboard.</p>
+            <form onsubmit="return false">
+                <p>Number of passwords? <input id="numpwd" type="text" name="num" value="1" maxlength="2" required></p>
+                <p>Password length? <input id="pwdlenght"type="text" name="len" value="8" maxlength="2" required></p>
+                <button type="submit" class="align_left button" onclick="get_passwords(document.getElementById('numpwd').value, document.getElementById('pwdlenght').value)">Submit</button>
+                <button type="reset" class="align_left button" onclick="setText('lblresult','Output')">Reset</button>                
+            </form>
+            <br>
+            <div id="result">
+                <label id="lblresult">Output</label>
+            </div>
+        </div>
+        <br>
+        <footer>Random password generator</footer>
+    </body>
+</html>
