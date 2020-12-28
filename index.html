@@ -16,8 +16,8 @@
         <div id="data">
             <p>A simple page where you can generate random passwords for your personal use. The passwords will not save in any database or text file, so the passwords are generated on the fly, just copy to the clipboard.</p>
             <form onsubmit="return false">
-                <p>Number of passwords? <input id="numpwd" type="text" name="num" value="1" maxlength="2" required></p>
-                <p>Password length? <input id="pwdlenght"type="text" name="len" value="8" maxlength="2" required></p>
+                <p>Number of passwords? <input id="numpwd" type="number" name="num" value="1" maxlength="2" min="1" required></p>
+                <p>Password length? <input id="pwdlenght"type="number" name="len" value="8" maxlength="2" min="1" required></p>
                 <button type="submit" class="align_left button" onclick="get_passwords(document.getElementById('numpwd').value, document.getElementById('pwdlenght').value)">Submit</button>
                 <button type="reset" class="align_left button" onclick="setText('lblresult','Output')">Reset</button>                
             </form>

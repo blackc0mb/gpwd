@@ -51,9 +51,10 @@ p {
 label {
    padding: 12px 12px 12px 0;
    display: inline-block;
+   text-align: justify;
 }
 
-input[type=text] {
+input[type=number] {
    background-color: rgb(13, 17, 23);
    color: rgb(88, 166, 255);
    width: 15%;
