@@ -2,17 +2,17 @@
 <html lang="en">    
     <head>
         <title>Password generator</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">        
         <link rel="stylesheet" type="text/css" href="styles.css"/>
-        <script type="text/javascript" src="pwd.js"></script>        
+        <script type="text/javascript" src="pwd.js"></script>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">          
     </head>
     <body>
         <div class="header">
             <img src="./images/password-icon-png-22.jpg" alt="logo"/>
-            <h1>Password Generator</h1>
-            <!-- <h3>Random password generator</h3> -->
+            <h1>Password Generator</h1>            
         </div>
-        <br>
         <div id="data">
             <p>A simple page where you can generate random passwords for your personal use. The passwords will not save in any database or text file, so the passwords are generated on the fly, just copy to the clipboard.</p>
             <form onsubmit="return false">
@@ -20,8 +20,7 @@
                 <p>Password length? <input id="pwdlenght"type="number" name="len" value="8" maxlength="2" min="1" required></p>
                 <button type="submit" class="align_left button" onclick="get_passwords(document.getElementById('numpwd').value, document.getElementById('pwdlenght').value)">Submit</button>
                 <button type="reset" class="align_left button" onclick="setText('lblresult','Output')">Reset</button>                
-            </form>
-            <br>
+            </form>            
             <div id="result">
                 <label id="lblresult">Output</label>
             </div>

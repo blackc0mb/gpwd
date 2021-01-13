@@ -8,7 +8,7 @@ function get_passwords(intNumPwd, intLenght) {
       for (var intCounter = 1; intCounter <= intLenght; intCounter++) {
          strText += strChars.charAt(Math.floor(Math.random() * strChars.length));
       }      
-      strRetPasswords += strText + "<br>"
+      strRetPasswords += strText + "<br>";
    }
    document.getElementById('lblresult').innerHTML = strRetPasswords;
 }

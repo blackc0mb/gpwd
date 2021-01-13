@@ -1,68 +1,79 @@
-.header {
-   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+html {
+   font-family: 'Work Sans', sans-serif;
+   color: white;
+}
+
+.header {   
+   font-size: 1.25em;
    text-align: center;
-   border-style: solid;
-   border-width: 1px;
-   border-radius: 6px;
-   border-color: rgb(201, 209, 217);   
-   background-color: rgb(13, 17, 23);
-   color: rgb(201, 209, 217);
-   padding: 25px;
-   font-size: 25px;
+   background-color: #021C1E;
+   margin: 0;
+   width: 100vw;
+   height: 20vh;
+   display: flex;
+   align-items: center;
+   justify-content: center;
 }
 
 .header img {
    float: center;
    width: 50px;
-   height: 50px;   
+   height: 50px;
+   padding: 10px;
  }
 
 body {
-   background-color: rgb(6, 9, 15);
+   padding: 0;
+   margin: 0;
+   width: 100vw;
+   height: auto;
+   background-color: #021C1E;
 }
 
 p {
    text-align: justify;
-   padding-left: 10px;
-   padding-right: 10px;
+   margin: 0;
+   padding: 0.3em 2em 0.3em 2em;
 }
 
 #data {
-   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-   border-style: solid;
-   border-width: 1px;
-   border-radius: 6px;
-   border-color: rgb(201, 209, 217);;
-   background-color: rgb(13, 17, 23);
-   color: rgb(201, 209, 217);
+   background-color: #004445;
+   width: 100vw;
+   padding: 1em 0 1em 0;
+   height: auto;
 }
 
 .align_left {
    position: relative;
-   left: 10px;
+   left: 2em;   
+}
+
+form {
+   padding: 0 0 1.5em 0;
+   width: 100vw;
 }
 
 #result {
-   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-   padding-left: 10px;
-   padding-bottom: 10px;
+   padding: 0em 1.1em 0em 1.1em;
+   width: 90vw;
 }
 
 label {
-   padding: 12px 12px 12px 0;
+   padding: 0em 1.1em 0em 1.1em;
+   width: 90vw;
    display: inline-block;
-   text-align: justify;
 }
 
 input[type=number] {
-   background-color: rgb(13, 17, 23);
+   background-color: #004445;
    color: rgb(88, 166, 255);
    width: 15%;
-   padding: 12px;
+   padding: 12px;   
    border: 1px solid #ccc;
    border-radius: 4px;
    box-sizing: border-box;
    resize: vertical;
+   margin: 10px 0 10px 0;
 }
 
 .button {
@@ -70,7 +81,7 @@ input[type=number] {
    border: none;
    border-radius: 4px;
    color: rgb(88, 166, 255);
-   padding: 12px 30px;
+   padding: 0.75em 1.875em 0.75em 1.875em;
    cursor: pointer;
    text-align: center;
    text-decoration: none;
@@ -78,10 +89,24 @@ input[type=number] {
    font-size: 14px;
 }
 
-.footer {
+.footer {   
+   height: 10vh;
+   width: 100vw; 
    text-align: center;
-   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+   background-color: #2C7873;  
    font-size: small;
-   color: rgb(201, 209, 217);
-   padding: 20px;
+
+   display: flex;
+   justify-content: center;
+   align-items: center;   
+}
+
+.footer img, a {
+   padding: 10px;
+}
+
+@media (max-width:900px) {
+   .header {
+      font-size: 1em;
+   }   
 }
