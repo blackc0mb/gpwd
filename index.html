@@ -6,29 +6,28 @@
         <link rel="stylesheet" type="text/css" href="styles.css"/>
         <script type="text/javascript" src="pwd.js"></script>
         <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">          
+        <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">        
     </head>
     <body>
-        <div class="header">
-            <img src="./images/password-icon-png-22.jpg" alt="logo"/>
-            <h1>Password Generator</h1>            
+        <div class="header">            
+            <a class="fa fa-lock fa-3x header-padding-left"></a>
+            <h1 class="header-padding-left">Password Generator</h1>
         </div>
         <div id="data">
             <p>A simple page where you can generate random passwords for your personal use. The passwords will not save in any database or text file, so the passwords are generated on the fly, just copy to the clipboard.</p>
             <form onsubmit="return false">
-                <p>Number of passwords? <input id="numpwd" type="number" name="num" value="1" maxlength="2" min="1" required></p>
-                <p>Password length? <input id="pwdlenght"type="number" name="len" value="8" maxlength="2" min="1" required></p>
+                <p>Number of passwords? <input id="numpwd" type="number" name="num" value="1" maxlength="2" min="1" max="50" required></p>
+                <p>Password length? <input id="pwdlenght"type="number" name="len" value="8" maxlength="2" min="1" max="30" required></p>
                 <button type="submit" class="align_left button" onclick="get_passwords(document.getElementById('numpwd').value, document.getElementById('pwdlenght').value)">Submit</button>
                 <button type="reset" class="align_left button" onclick="setText('lblresult','Output')">Reset</button>                
-            </form>            
+            </form>
             <div id="result">
                 <label id="lblresult">Output</label>
             </div>
         </div>    
         <div class="footer">
-            <a href="https://github.com/blackc0mb" target="blank">
-                <img src="./images/GitHub-Mark-Light-32px.png">
-            </a>
+            <a href="https://github.com/blackc0mb" target="blank" class="fa fa-github fa-3x"></a>
             <h2>2021</h2>
         </div>
     </body>

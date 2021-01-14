@@ -1,6 +1,13 @@
 html {
    font-family: 'Work Sans', sans-serif;
-   color: white;
+   color: white;      
+}
+
+body {
+   padding: 0;
+   margin: 0;
+   height: auto;
+   background-color: #021C1E;
 }
 
 .header {   
@@ -8,27 +15,15 @@ html {
    text-align: center;
    background-color: #021C1E;
    margin: 0;
-   width: 100vw;
-   height: 20vh;
+   height: 25vh;
    display: flex;
    align-items: center;
    justify-content: center;
 }
 
-.header img {
-   float: center;
-   width: 50px;
-   height: 50px;
-   padding: 10px;
- }
-
-body {
-   padding: 0;
-   margin: 0;
-   width: 100vw;
-   height: auto;
-   background-color: #021C1E;
-}
+.header-padding-left {
+   padding-left: 0.5em;
+}   
 
 p {
    text-align: justify;
@@ -37,8 +32,7 @@ p {
 }
 
 #data {
-   background-color: #004445;
-   width: 100vw;
+   background-color: #004445;   
    padding: 1em 0 1em 0;
    height: auto;
 }
@@ -50,7 +44,6 @@ p {
 
 form {
    padding: 0 0 1.5em 0;
-   width: 100vw;
 }
 
 #result {
@@ -74,6 +67,7 @@ input[type=number] {
    box-sizing: border-box;
    resize: vertical;
    margin: 10px 0 10px 0;
+   font-family: 'Work Sans', sans-serif;
 }
 
 .button {
@@ -87,22 +81,26 @@ input[type=number] {
    text-decoration: none;
    display: inline-block;
    font-size: 14px;
+   font-family: 'Work Sans', sans-serif;
 }
 
 .footer {   
-   height: 10vh;
-   width: 100vw; 
+   height: 15vh;
    text-align: center;
-   background-color: #2C7873;  
+   background-color: #2C7873;
    font-size: small;
-
    display: flex;
    justify-content: center;
-   align-items: center;   
+   flex-direction: column;
 }
 
-.footer img, a {
-   padding: 10px;
+.footer h2 {
+   padding: 1em 0 0 0;
+}
+
+.footer h2, a {
+   margin: 0;   
+   color: white;
 }
 
 @media (max-width:900px) {
