@@ -1,6 +1,22 @@
+:root {
+   --general-font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
+   --general-font-size: 0.8em;
+   --buttons-font-size: 1.0em;
+   --footer-font-size: 0.8em;
+}
+
+@media screen and (min-width: 768px) {
+   :root {
+      --general-font-size: 1.25em;
+      --buttons-font-size: 0.8em;
+      --footer-font-size: 0.8em;
+   }
+}
+
 html {
-   font-family: 'Work Sans', sans-serif;
-   color: white;      
+   font-family: var(--general-font-family);
+   color: white;
+   height: 100%;
 }
 
 body {
@@ -11,7 +27,7 @@ body {
 }
 
 .header {   
-   font-size: 1.25em;
+   font-size: var(--general-font-size);
    text-align: center;
    background-color: #021C1E;
    margin: 0;
@@ -67,7 +83,7 @@ input[type=number] {
    box-sizing: border-box;
    resize: vertical;
    margin: 10px 0 10px 0;
-   font-family: 'Work Sans', sans-serif;
+   font-family: var(--general-font-family);
 }
 
 .button {
@@ -80,15 +96,15 @@ input[type=number] {
    text-align: center;
    text-decoration: none;
    display: inline-block;
-   font-size: 14px;
-   font-family: 'Work Sans', sans-serif;
+   font-size: var(--buttons-font-size);
+   font-family: var(--general-font-family);
 }
 
 .footer {   
    height: 15vh;
    text-align: center;
    background-color: #2C7873;
-   font-size: small;
+   font-size: var(--footer-font-size);
    display: flex;
    justify-content: center;
    flex-direction: column;
@@ -101,10 +117,4 @@ input[type=number] {
 .footer h2, a {
    margin: 0;   
    color: white;
-}
-
-@media (max-width:900px) {
-   .header {
-      font-size: 1em;
-   }   
 }
