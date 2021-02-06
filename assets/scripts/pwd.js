@@ -1,36 +1,40 @@
-function validate_form() {
-   if ( parseInt(document.getElementById('numpwd').value) > 50 ) {
-         return false;
-      }
+const intNumPwd = document.querySelector('#numpwd');
+const intLength = document.querySelector('#pwdlenght');
+const retPassword = document.querySelector("#lblresult");
+const button = document.querySelector('#submitBtn');
+const resetBtn = document.querySelector('#resetBtn');
 
-      if ( parseInt(document.getElementById('pwdlenght').value) > 30) {
-         return false;
-      }
-      
-      return true;
-}
-
-function get_passwords(intNumPwd, intLenght) {   
+button.addEventListener('click', (ev) => {
    var strText = "";
    var strRetPasswords = "";
-   var strChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTVWXYZ0123456789._?#$%&=),!-;*";
+   var strPossible = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTVWXYZ0123456789._?#$%&=),!-;*";
+   
+   ev.preventDefault();   
 
    if (validate_form() == false) {
-      document.getElementById('lblresult').innerHTML = "Output"
+      document.getElementById('lblresult').innerHTML = "Number of passwords must between 1 - 50 | length password must be between 1 - 30"
       return strRetPasswords;
    }   
 
-   for (var intIterations = 1; intIterations <= intNumPwd; intIterations++) {
+   for (var intIterations = 1; intIterations <= intNumPwd.value; intIterations++) {
       strText = "";
-      for (var intCounter = 1; intCounter <= intLenght; intCounter++) {
-         strText += strChars.charAt(Math.floor(Math.random() * strChars.length));
-      }      
-      strRetPasswords += strText + "<br>";
+      for (var intCont = 1; intCont <= intLength.value; intCont++) {
+         strText += strPossible.charAt(Math.floor(Math.random() * strPossible.length));
+      }
+      strRetPasswords += strText + "\n";
    }
-   document.getElementById('lblresult').innerHTML = strRetPasswords;   
-}
+   document.getElementById('lblresult').innerHTML = strRetPasswords;
+   return true;
+});
 
-function setText(id,newvalue) {
-   var newtextelemnt = document.getElementById(id);
-   newtextelemnt.innerHTML = newvalue;
- }
+resetBtn.addEventListener('click', () => {
+   document.getElementById('lblresult').innerHTML = 'Output';
+});
+
+function validate_form() {
+   if ((parseInt(intNumPwd.value) > parseInt(intNumPwd.max)) || (parseInt(intLength.value) > parseInt(intLength.max))) {
+      return false;
+   }
+
+   return true;
+}
