@@ -1,7 +1,9 @@
 :root {
-   /*--general-font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;*/
+   /*--general-font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;*/   
    --general-font-family: 'Nunito Sans', sans-serif;
+   --general-font-color: #0F1F38;
    --general-background-color: #181818;
+   --background-color-data-container: #f2f2f2;
    --general-font-size: 0.8em;
    --buttons-font-size: 1.0em;
    --footer-font-size: 0.8em;
@@ -13,17 +15,17 @@
 
 html {
    font-family: var(--general-font-family);
-   color: white;
+   color: var(--general-font-color);
 }
 
 body {
    padding: 0;
    margin: 0;
-   background-color: var(--general-background-color);
 }
 
 p {
    margin-top: 0;
+   text-align: justify;
 }
 
 .general-content {
@@ -32,22 +34,24 @@ p {
 
 .header {   
    font-size: var(--general-font-size);
-   text-align: center;   
-   background-color: var(--general-background-color);
+   text-align: center;
    margin: 0;
    height: 20%;
    display: flex;
    align-items: center;
    justify-content: center;
+   border-bottom: 3px solid var(--general-font-color);
 }
 
 .header-padding-left {
    padding-left: 0.5em;
-}   
+}
 
 .data-container {
    padding: 20px;
-   background-color: #004445;
+   background-color: var(--background-color-data-container);
+   border-radius: 5px;
+   margin: 20px;   
 }
 
 .lblresult {
@@ -62,19 +66,18 @@ label {
  }
 
 input[type=number], textarea {
-   font-family: var(--general-font-family);
-   background-color: rgb(49, 56, 66);
-   color: white;
+   font-family: var(--general-font-family);   
+   color: var(--general-font-color);
    width: 100%;
    padding: 12px;
-   border: 1px solid #ccc;
+   border: 1px solid var(--general-font-color);
    border-radius: 4px;
    resize: vertical;
 }
 
 input[type=submit], input[type=reset] {
-   background-color: rgb(33, 38, 45);
-   color: rgb(88, 166, 255);
+   color: var(--general-font-color);
+   background-color: rgb(217, 217, 217);
    padding: 12px 20px;
    margin: 10px 0 10px 0;
    border: none;
@@ -83,7 +86,8 @@ input[type=submit], input[type=reset] {
  }
 
 input[type=submit]:hover, input[type=reset]:hover {
-   background-color: rgb(24, 28, 34);
+   color: white;
+   background-color: var(--general-background-color);
 }
 
 .col-15 {
@@ -113,20 +117,19 @@ input[type=submit]:hover, input[type=reset]:hover {
 .footer {   
    height: 15%;
    text-align: center;   
-   background-color: var(--general-background-color);
    font-size: var(--footer-font-size);
    display: flex;
    justify-content: center;
-   flex-direction: column;
+   flex-direction: column;   
 }
 
 .footer h2 {
-   padding: 1em 0 0 0;
+   padding: 0.5em 0 0 0;   
 }
 
 .footer h2, a {
-   margin: 0;   
-   color: white;
+   margin: 0;
+   color: var(--general-font-color);
 }
 
 @media screen and (min-width: 768px) {
