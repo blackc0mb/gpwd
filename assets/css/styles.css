@@ -49,10 +49,13 @@ p {
 }
 
 .data-container {
-   padding: 20px;
-   background-color: var(--background-color-data-container);
-   border-radius: 5px;
-   margin: 20px;   
+   padding: 30px;
+   margin: 30px;
+   /* boxshadow from neumorphism.io */
+   border-radius: 50px;
+   background: #f2f2f2;
+   box-shadow: -30px 30px 60px #dadada,
+                30px -30px 60px #ffffff;   
 }
 
 .lblresult {
@@ -88,7 +91,8 @@ input[type=submit], input[type=reset] {
    margin: 10px 0 10px 0;
    border: none;
    border-radius: 4px;
-   cursor: pointer;   
+   cursor: pointer;
+   font-weight: bold;  
  }
 
 input[type=submit]:hover, input[type=reset]:hover {
@@ -148,8 +152,16 @@ input[type=submit]:hover, input[type=reset]:hover {
 
 @media screen and (max-width: 600px) {
    .col-15, .col-85, input[type=submit], input[type=reset] {
-     width: 100%;
-     margin-top: 10px;
-     margin-bottom: 0px;
+      width: 100%;
+      margin-top: 10px;
+      margin-bottom: 0px;
+   }
+
+   .col-15, .col-85 {
+      margin-top: 0px;      
+   }
+
+   .col-100 {
+      margin-top: 10px;
    }
  }
