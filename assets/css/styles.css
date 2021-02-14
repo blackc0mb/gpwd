@@ -2,9 +2,10 @@
    /*--general-font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;*/   
    --general-font-family: 'Nunito Sans', sans-serif;
    --general-font-color: #0F1F38;
+   --general-font-family-output: 'Courier New', Courier, monospace;
    --general-background-color: #181818;
    --background-color-data-container: #f2f2f2;
-   --general-font-size: 0.8em;
+   --general-font-size: 1.0em;
    --buttons-font-size: 1.0em;
    --footer-font-size: 0.8em;
 }
@@ -15,7 +16,7 @@
 
 html {
    font-family: var(--general-font-family);
-   color: var(--general-font-color);
+   color: var(--general-font-color);   
 }
 
 body {
@@ -44,7 +45,7 @@ p {
 }
 
 .header-padding-left {
-   padding-left: 0.5em;
+   padding-left: 0em;
 }
 
 .data-container {
@@ -57,7 +58,7 @@ p {
 .lblresult {
    padding: 0em 1.1em 0em 1.1em;
    width: 90vw;
-   display: inline-block;
+   display: inline-block;   
 }
 
 label {
@@ -73,6 +74,11 @@ input[type=number], textarea {
    border: 1px solid var(--general-font-color);
    border-radius: 4px;
    resize: vertical;
+}
+
+textarea {
+   font-family: var(--general-font-family-output);
+   font-size: var(--general-font-size);
 }
 
 input[type=submit], input[type=reset] {
@@ -134,7 +140,7 @@ input[type=submit]:hover, input[type=reset]:hover {
 
 @media screen and (min-width: 768px) {
    :root {
-      --general-font-size: 1.25em;
+      --general-font-size: 1.0em;
       --buttons-font-size: 0.8em;
       --footer-font-size: 0.8em;
    }

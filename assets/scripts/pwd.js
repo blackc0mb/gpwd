@@ -5,9 +5,9 @@ const button = document.querySelector('#submitBtn');
 const resetBtn = document.querySelector('#resetBtn');
 
 button.addEventListener('click', (ev) => {
-   var strText = "";
-   var strRetPasswords = "";
-   var strPossible = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTVWXYZ0123456789._?#$%&=),!-;*";
+   const CHARS = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTVWXYZ0123456789._?#$%&=),!-;*";   
+   let strText = "";
+   let strRetPasswords = "";   
    
    ev.preventDefault();   
 
@@ -19,7 +19,7 @@ button.addEventListener('click', (ev) => {
    for (var intIterations = 1; intIterations <= intNumPwd.value; intIterations++) {
       strText = "";
       for (var intCont = 1; intCont <= intLength.value; intCont++) {
-         strText += strPossible.charAt(Math.floor(Math.random() * strPossible.length));
+         strText += CHARS.charAt(Math.floor(Math.random() * CHARS.length));
       }
       strRetPasswords += strText + "\n";
    }
