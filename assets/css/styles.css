@@ -1,5 +1,5 @@
 :root {
-   --general-font-family: 'Assistant', sans-serif;
+   --general-font-family: 'Lexend Deca', sans-serif;
    --general-font-color: #0F1F38;
    --general-font-family-output: 'Courier New', Courier, monospace;
    --general-background-color: #181818;
@@ -13,14 +13,11 @@
    box-sizing: border-box;
  }
 
-html {
-   font-family: var(--general-font-family);
-   color: var(--general-font-color);   
-}
-
 body {
    padding: 0;
    margin: 0;
+   font-family: var(--general-font-family);
+   color: var(--general-font-color);
 }
 
 p {
@@ -40,7 +37,22 @@ p {
    display: flex;
    align-items: center;
    justify-content: center;
-   border-bottom: 3px solid var(--general-font-color);
+   /*border-bottom: 3px solid var(--general-font-color);*/
+}
+
+#title {
+   animation-name: translating-animation;
+   animation-duration: 4s;
+   animation-iteration-count: infinite;
+   animation-timing-function: linear;
+}
+
+@keyframes translating-animation {
+   0% {transform: translateY(-20px)}
+   25% {transform: translateY(0px)}
+   50% {transform: translateY(20px)}
+   75% {transform: translateY(0px)}
+   100% {transform: translateY(-20px)}
 }
 
 .header-padding-left {
@@ -48,13 +60,13 @@ p {
 }
 
 .data-container {
-   padding: 30px;
-   margin: 30px;
+   padding: 30px;   
+   margin: 0 30px 0px 30px;
    /* boxshadow from neumorphism.io */
    border-radius: 50px;
    background: #f2f2f2;
    box-shadow: -30px 30px 60px #dadada,
-                30px -30px 60px #ffffff;   
+                30px -30px 60px #ffffff;
 }
 
 .lblresult {
@@ -69,7 +81,7 @@ label {
  }
 
 input[type=number], textarea {
-   font-family: var(--general-font-family);   
+   font-family: var(--general-font-family);
    color: var(--general-font-color);
    width: 100%;
    padding: 12px;
@@ -79,11 +91,12 @@ input[type=number], textarea {
 }
 
 textarea {
-   font-family: var(--general-font-family-output);
+   font-family: var(--general-font-family-output);   
    font-size: var(--general-font-size);
 }
 
 input[type=submit], input[type=reset] {
+   font-family: var(--general-font-family);
    color: var(--general-font-color);
    background-color: rgb(217, 217, 217);
    padding: 12px 20px;
@@ -91,7 +104,7 @@ input[type=submit], input[type=reset] {
    border: none;
    border-radius: 4px;
    cursor: pointer;
-   font-weight: bold;  
+   width: 93px;
  }
 
 input[type=submit]:hover, input[type=reset]:hover {
@@ -129,7 +142,8 @@ input[type=submit]:hover, input[type=reset]:hover {
    font-size: var(--footer-font-size);
    display: flex;
    justify-content: center;
-   flex-direction: column;   
+   flex-direction: column;
+   align-items: center;
 }
 
 .footer h2 {
@@ -139,6 +153,10 @@ input[type=submit]:hover, input[type=reset]:hover {
 .footer h2, a {
    margin: 0;
    color: var(--general-font-color);
+}
+
+.footer a:hover {
+   color: #224780;
 }
 
 @media screen and (min-width: 768px) {
@@ -156,11 +174,11 @@ input[type=submit]:hover, input[type=reset]:hover {
       margin-bottom: 0px;
    }
 
-   .col-15, .col-85 {
+      .col-15, .col-85 {
       margin-top: 0px;      
    }
 
-   .col-100 {
+      .col-100 {
       margin-top: 10px;
    }
- }
+}
