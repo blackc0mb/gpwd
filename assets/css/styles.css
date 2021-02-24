@@ -4,7 +4,7 @@
    --general-font-family-output: 'Courier New', Courier, monospace;
    --general-background-color: #181818;
    --background-color-data-container: #f2f2f2;
-   --general-font-size: 1.0em;
+   --general-font-size: 0.9em;
    --buttons-font-size: 1.0em;
    --footer-font-size: 0.8em;
 }
@@ -37,7 +37,6 @@ p {
    display: flex;
    align-items: center;
    justify-content: center;
-   /*border-bottom: 3px solid var(--general-font-color);*/
 }
 
 #title {
@@ -95,7 +94,7 @@ textarea {
    font-size: var(--general-font-size);
 }
 
-input[type=submit], input[type=reset] {
+input[type=submit], input[type=reset], input[type=button] {
    font-family: var(--general-font-family);
    color: var(--general-font-color);
    background-color: rgb(217, 217, 217);
@@ -105,9 +104,15 @@ input[type=submit], input[type=reset] {
    border-radius: 4px;
    cursor: pointer;
    width: 93px;
+   text-align: center;
  }
 
-input[type=submit]:hover, input[type=reset]:hover {
+input[type=button] {   
+   width: 100%;
+   background-color: rgb(186, 186, 186);
+}
+
+input[type=submit]:hover, input[type=reset]:hover, input[type=button]:hover {
    color: white;
    background-color: var(--general-background-color);
 }
@@ -171,6 +176,12 @@ input[type=submit]:hover, input[type=reset]:hover {
    .col-15, .col-85, input[type=submit], input[type=reset] {
       width: 100%;
       margin-top: 10px;
+      margin-bottom: 0px;
+   }
+
+   input[type=button] {
+      width: 100%;
+      margin-top: 5px;      
       margin-bottom: 0px;
    }
 

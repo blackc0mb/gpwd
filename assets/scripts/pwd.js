@@ -3,9 +3,10 @@ const intLength = document.querySelector('#pwdlenght');
 const retPassword = document.querySelector("#lblresult");
 const button = document.querySelector('#submitBtn');
 const resetBtn = document.querySelector('#resetBtn');
+const clipboardBtn = document.querySelector('#copyBtn');
 
 button.addEventListener('click', (ev) => {
-   const CHARS = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTVWXYZ0123456789._?#$%&=),!-;*";   
+   const CHARS = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTVWXYZ0123456789._?#$%&=),!-;*+([]{}";
    let strText = "";
    let strRetPasswords = "";   
    
@@ -38,3 +39,10 @@ function validate_form() {
 
    return true;
 }
+
+clipboardBtn.addEventListener('click', (ev) => {
+   let copyText = document.getElementById("lblresult");
+   copyText.select();
+   copyText.setSelectionRange(0, 99999);
+   document.execCommand("copy");   
+});
