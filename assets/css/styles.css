@@ -4,7 +4,8 @@
    --general-font-family-output: 'Courier New', Courier, monospace;
    --general-background-color: #181818;
    --background-color-data-container: #f2f2f2;
-   --general-font-size: 0.9em;
+   --general-font-size: 0.8em;
+   --text-area-font-size: 1.0em;
    --buttons-font-size: 1.0em;
    --footer-font-size: 0.8em;
 }
@@ -91,7 +92,7 @@ input[type=number], textarea {
 
 textarea {
    font-family: var(--general-font-family-output);   
-   font-size: var(--general-font-size);
+   font-size: var(--text-area-font-size);
 }
 
 input[type=submit], input[type=reset], input[type=button] {
