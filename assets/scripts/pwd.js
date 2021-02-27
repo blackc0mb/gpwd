@@ -1,3 +1,4 @@
+// Declarations for password generator
 const intNumPwd = document.querySelector('#numpwd');
 const intLength = document.querySelector('#pwdlenght');
 const retPassword = document.querySelector("#lblresult");
@@ -5,6 +6,16 @@ const button = document.querySelector('#submitBtn');
 const resetBtn = document.querySelector('#resetBtn');
 const clipboardBtn = document.querySelector('#copyBtn');
 
+// Declarations for title animation, source github => kubowania / typewriter
+const textDisplay = document.getElementById('banner');
+const title = [' Password Generator', ' Thanks for use it'];
+let i = 0
+let j = 0 
+let currentPhrase = []
+let isDeleting = false
+let isEnd = false
+
+// Password generator functions
 button.addEventListener('click', (ev) => {
    const CHARS = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTVWXYZ0123456789._?#$%&=),!-;*+([]{}";
    let strText = "";
@@ -38,7 +49,7 @@ function validate_form() {
    }
 
    return true;
-}
+};
 
 clipboardBtn.addEventListener('click', (ev) => {
    let copyText = document.getElementById("lblresult");
@@ -46,3 +57,44 @@ clipboardBtn.addEventListener('click', (ev) => {
    copyText.setSelectionRange(0, 99999);
    document.execCommand("copy");   
 });
+
+// Title animation functions
+function loop () {
+   isEnd = false;
+   textDisplay.innerHTML = currentPhrase.join('');
+ 
+   if (i < title.length) {
+ 
+     if (!isDeleting && j <= title[i].length) {
+       currentPhrase.push(title[i][j]);
+       j++;
+       textDisplay.innerHTML = currentPhrase.join('');
+     }
+ 
+     if(isDeleting && j <= title[i].length) {
+       currentPhrase.pop(title[i][j]);
+       j--;
+       textDisplay.innerHTML = currentPhrase.join('');
+     }
+ 
+     if (j == title[i].length) {
+       isEnd = true;
+       isDeleting = true;
+     }
+ 
+     if (isDeleting && j === 0) {
+       currentPhrase = [];
+       isDeleting = false;
+       i++;
+       if (i === title.length) {
+         i = 0;
+       }
+     }
+   }
+   const spedUp = Math.random() * (80 - 50) + 50;
+   const normalSpeed = Math.random() * (300 -200) + 200;
+   const time = isEnd ? 2000 : isDeleting ? spedUp : normalSpeed;
+   setTimeout(loop, time);
+ };
+ 
+ loop();
