@@ -19,13 +19,13 @@ let isEnd = false
 button.addEventListener('click', (ev) => {
    const CHARS = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTVWXYZ0123456789._?#$%&=),!-;*+([]{}";
    let strText = "";
-   let strRetPasswords = "";   
+   let arrPasswords = [];
    
    ev.preventDefault();   
 
    if (validate_form() == false) {
       document.getElementById('lblresult').innerHTML = "Number of passwords must between 1 - 50 | length password must be between 1 - 30"
-      return strRetPasswords;
+      return false;
    }   
 
    for (var intIterations = 1; intIterations <= intNumPwd.value; intIterations++) {
@@ -33,9 +33,9 @@ button.addEventListener('click', (ev) => {
       for (var intCont = 1; intCont <= intLength.value; intCont++) {
          strText += CHARS.charAt(Math.floor(Math.random() * CHARS.length));
       }
-      strRetPasswords += strText + "\n";
+      arrPasswords.push(strText);
    }
-   document.getElementById('lblresult').innerHTML = strRetPasswords;
+   document.getElementById('lblresult').innerHTML = arrPasswords.join("\n");
    return true;
 });
 
