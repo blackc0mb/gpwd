@@ -127,6 +127,44 @@ input[type=submit]:hover, input[type=reset]:hover, input[type=button]:hover {
 	background-color:#6c7c7c;
 }
 
+/* tooltip button copy clipboard */
+.tooltip {
+   position: relative;   
+}
+
+.tooltip .tooltiptext {
+   visibility: hidden;
+   width: 140px;
+   background-color: #555;
+   color: #fff;
+   text-align: center;
+   border-radius: 6px;
+   padding: 5px;
+   position: absolute;
+   z-index: 1;
+   bottom: 105%;
+   left: 50%;
+   margin-left: -75px;
+   opacity: 0;
+   transition: opacity 0.3s;
+}
+ 
+.tooltip .tooltiptext::after {
+   content: "";
+   position: absolute;
+   top: 100%;
+   left: 50%;
+   margin-left: -5px;
+   border-width: 5px;
+   border-style: solid;
+   border-color: #555 transparent transparent transparent;
+}
+ 
+.tooltip:hover .tooltiptext {
+   visibility: visible;
+   opacity: 1;
+}
+
 .col-15 {
    float: left;
    width: 15%;
@@ -201,5 +239,9 @@ input[type=submit]:hover, input[type=reset]:hover, input[type=button]:hover {
 
       .col-100 {
       margin-top: 10px;
+   }
+
+   p {
+      margin-bottom: 10px;
    }
 }

@@ -51,12 +51,21 @@ function validate_form() {
    return true;
 };
 
+// Copy to clipboard functions
 clipboardBtn.addEventListener('click', (ev) => {
    let copyText = document.getElementById("lblresult");
    copyText.select();
    copyText.setSelectionRange(0, 99999);
-   document.execCommand("copy");   
+   document.execCommand("copy");
+
+   let tooltip = document.getElementById("myTooltip");
+   tooltip.innerHTML = "Copied!";
 });
+
+function outFunc() {
+   var tooltip = document.getElementById("myTooltip");
+   tooltip.innerHTML = "Copy to clipboard";
+ }
 
 // Title animation functions
 function loop () {

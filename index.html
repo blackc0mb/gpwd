@@ -48,11 +48,13 @@
                     </div>                    
                 </div>
                 
-                <div class="row">
-                    <input id="copyBtn" type="button" value="Copy to clipboard">
+                <div class="row tooltip">
+                    <input id="copyBtn" type="button" value="Copy to clipboard" onmouseout="outFunc()">
+                        <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
+                    </input>                         
                 </div>                
             </div>
-            <div class="footer">
+            <div class="footer">                
                 <a href="https://github.com/blackc0mb" target="blank" class="fa fa-github fa-3x"></a>
                 <h2>2021</h2>
             </div>    
