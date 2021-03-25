@@ -1,5 +1,10 @@
 <h1 align="center">🔒 Password generator</h1>
 
+<p align="center">
+	<img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/blackc0mb/gpwd">
+	<img alt="Lines of code" src="https://img.shields.io/tokei/lines/github/blackc0mb/gpwd">
+    <img alt="Twitter URL" src="https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Fgithub.com%2Fblackc0mb%2Fgpwd">
+</p><br/><br/>
 
 ## 📌 Short description  
 This project born as a personal need to make strong passwords quickly only for personal use and without the need (by now) to store in any database or something like that.<br/><br/><br/>
