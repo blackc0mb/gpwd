@@ -3,7 +3,7 @@
 <p align="center">
 	<img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/blackc0mb/gpwd">
 	<img alt="Lines of code" src="https://img.shields.io/tokei/lines/github/blackc0mb/gpwd">
-    <img alt="Twitter URL" src="https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Fgithub.com%2Fblackc0mb%2Fgpwd">
+	<img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/blackc0mb/gpwd">
 </p><br/><br/>
 
 ## 📌 Short description  
