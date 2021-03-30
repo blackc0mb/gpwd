@@ -1,13 +1,15 @@
 :root {
    --general-font-family: 'PT Sans', sans-serif;
-   --general-font-color: #0F1F38;
+   --general-font-color: #111111;
    --general-font-family-output: 'Courier New', Courier, monospace;
-   --general-background-color: #181818;
+   --general-background-color: #fdfdfd;
    --background-color-data-container: #f2f2f2;
    --general-font-size: 0.8em;
    --text-area-font-size: 1.0em;
    --buttons-font-size: 1.0em;
    --footer-font-size: 0.8em;
+   --line-header-color: #828282;
+   --line-header-color-light: #e6e6e6;
 }
 
 * {
@@ -19,6 +21,11 @@ body {
    margin: 0;
    font-family: var(--general-font-family);
    color: var(--general-font-color);
+   background: var(--general-background-color);
+}
+
+h1 {
+   font-weight: lighter;
 }
 
 p {
@@ -28,6 +35,7 @@ p {
 
 .general-content {
    height: 100vh;
+   background: var(--general-background-color);
 }
 
 .header {   
@@ -37,8 +45,10 @@ p {
    display: flex;
    align-items: center;
    justify-content: center;
-   padding: 30px;   
-   margin: 0 30px 0px 30px;   
+   padding: 30px;
+   /*margin: 0 30px 0px 30px;*/
+   margin: 0;
+   border-bottom: 1px solid var(--line-header-color-light);
 }
 
 /*
@@ -65,11 +75,6 @@ p {
 .data-container {
    padding: 30px;   
    margin: 0 30px 0px 30px;
-   /* boxshadow from neumorphism.io */
-   border-radius: 50px;
-   background: #f2f2f2;
-   box-shadow: -30px 30px 60px #dadada,
-                30px -30px 60px #ffffff;
 }
 
 .lblresult {
