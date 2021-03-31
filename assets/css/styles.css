@@ -114,7 +114,6 @@ input[type=submit], input[type=reset], input[type=button] {
 	display: inline-block;
 	cursor: pointer;
 	color: #ffffff;
-	font-family: Arial;
 	font-size: 15px;
 	font-weight: bold;	
 	text-decoration: none;
