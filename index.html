@@ -1,64 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">    
+<html lang="en">
     <head>
-        <title>Password generator</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">        
-        <link rel="stylesheet" type="text/css" href="./assets/css/styles.css"/>
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./assets/css/styles.css">
         <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+        <title>Password Generator</title>
+        <meta name="description" content="Password generator for your personal use">
     </head>
     <body>
+        <div class="header">
+            <h1 class="animate__animated animate__bounce"><i class="fa fa-lock"></i> Password Generator</h1>
+        </div>
+
         <div class="general-content">
-            <div id="title" class="header">
-                <a class="fa fa-lock fa-3x header-padding-left animate__animated animate__bounce">&nbsp;</a>
-                <h1 id="banner" class="header-padding-left animate__animated animate__bounce">&nbsp;Password Generator</h1>
+            <div class="subtitle-container">
+                <h3>Generate random passwords for your personal use</h3>
+                <p>The passwords are generated on the fly, just copy it to the clipboard</p>
             </div>
-            <div class="data-container">
-                <p>A simple page where you can generate random passwords for your personal use. The passwords will not save in any database or text file, so the passwords are generated on the fly, just copy it to the clipboard</p>
-                <form>
-                    <div class="row">
-                        <div class="col-15">
-                          <label for="numpwd">Number of passwords?</label>
-                        </div>
-                        <div class="col-85">
-                          <input type="number" id="numpwd" name="num" placeholder="Enter the number of passwords" size="2" value="1" min="1" max="50">
-                        </div>
+
+            <div class="password-container">
+                <div class="row">
+                    <div class="col-85">
+                        <span id="output-password">Output</span>
                     </div>
-
-                    <div class="row">
-                        <div class="col-15">
-                          <label for="pwdlenght">Password length?</label>
-                        </div>
-                        <div class="col-85">
-                          <input type="number" id="pwdlenght" name="len" placeholder="Enter the password length" size="2" value="8" min="1" max="30">
-                        </div>
-                    </div>                    
-
-                    <div class="row">
-                        <input id="submitBtn" type="submit" value="Submit">
-                        <input id="resetBtn" type="reset" value="Reset">
+                    <div class="col-15">
+                        <span id="submitBtn" class="refresh"><i class="fa fa-refresh"></i></span>
                     </div>
-                </form>
+                </div>
+            </div>
 
+            <div class="copy-password-container">
                 <div class="row">
                     <div class="col-100">
-                      <textarea id="lblresult" name="subject" placeholder="Output" style="height:100px" readonly></textarea>
-                    </div>                    
+                        <button class="tooltip" id="copyBtn" type="button" onmouseout="outFunc()">Clipboard
+                            <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
+                        </button>
+                    </div>
                 </div>
-                
-                <div class="row tooltip">
-                    <input id="copyBtn" type="button" value="Copy to clipboard" onmouseout="outFunc()">
-                        <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
-                    </input>                         
-                </div>                
             </div>
-            <div class="footer">                
-                <a href="https://github.com/blackc0mb" target="blank" class="fa fa-github fa-3x"></a>
-                <h2>2021</h2>
-            </div>    
+
+            <div class="slider-container">
+                <p>Password length: <strong><span id="span-pwdlenght"></span></strong></p>
+                <input type="range" min="8" max="30" value="12" id="pwdlenght" class="slider">
+            </div>
+
         </div>
+
+        <div class="footer">
+            <a href="https://github.com/blackc0mb" target="blank" class="footer-social-link"><i class="fa fa-github"></i></a>
+            <h2>2021</h2>
+            <i class="fa fa-copyright"></i>
+        </div>
+
         <script type="text/javascript" src="./assets/scripts/pwd.js"></script>
     </body>
 </html>

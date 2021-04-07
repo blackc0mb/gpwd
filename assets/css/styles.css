@@ -1,135 +1,88 @@
 :root {
    --general-font-family: 'Roboto', sans-serif;
-   --general-font-color: #111111;
    --general-font-family-output: 'Courier New', Courier, monospace;
-   --general-background-color: #fdfdfd;
-   --background-color-data-container: #f2f2f2;
+   --general-font-color: #111111;
+   --line-header-color-light: lightgray;
+
    --general-font-size: 0.8em;
    --text-area-font-size: 1.0em;
    --buttons-font-size: 1.0em;
    --footer-font-size: 0.8em;
-   --line-header-color: #828282;
-   --line-header-color-light: #e6e6e6;
+   --password-font-size: 1.2em;
 }
 
 * {
    box-sizing: border-box;
- }
+}
 
 body {
-   padding: 0;
-   margin: 0;
    font-family: var(--general-font-family);
    color: var(--general-font-color);
-   background: var(--general-background-color);
+   margin: 0;
+   padding: 0;
+}
+
+.header {
+   font-size: var(--general-font-size);
+   border-bottom: 1px solid var(--line-header-color-light);
 }
 
 h1 {
-   font-weight: lighter;
+   margin: 0;
+   padding: 40px 0px 40px 0px;
 }
 
-p {
-   margin-top: 0;
+h1, h2, h3 {
    text-align: center;
 }
 
 .general-content {
-   height: 100vh;
-   background: var(--general-background-color);
+   padding: 0px 60px 0px 60px;
+   margin: 0px 150px 0px 150px;
+
 }
 
-.header {   
-   font-size: var(--general-font-size);
-   text-align: center;
-   height: 13%;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   padding: 30px;
-   /*margin: 0 30px 0px 30px;*/
+.subtitle-container p {
    margin: 0;
-   border-bottom: 1px solid var(--line-header-color-light);
+   padding: 10px 0 15px 0;
 }
 
-/*
-#title {
-   animation-name: translating-animation;
-   animation-duration: 4s;
-   animation-iteration-count: infinite;
-   animation-timing-function: linear;
+.password-container {
+   padding: 10px 0px 25px 0px;
+   border-bottom: 2px solid var(--line-header-color-light);
+   font-size: var(--password-font-size);
 }
 
-@keyframes translating-animation {
-   0% {transform: translateY(-20px)}
-   25% {transform: translateY(0px)}
-   50% {transform: translateY(20px)}
-   75% {transform: translateY(0px)}
-   100% {transform: translateY(-20px)}
-}
-*/
-
-.header-padding-left {
-   padding-left: 0em;
+.copy-password-container {
+   padding: 10px 0px 10px 0px;
 }
 
-.data-container {
-   padding: 30px;   
-   margin: 0 30px 0px 30px;
-}
+#copyBtn {
+   width: 15%;
+   margin-top: 5px;      
+   margin-bottom: 0px;
 
-.lblresult {
-   padding: 0em 1.1em 0em 1.1em;
-   width: 90vw;
-   display: inline-block;   
-}
-
-label {
-   padding: 12px 12px 12px 0;
-   display: inline-block;
- }
-
-input[type=number], textarea {
+   border-radius: 10px;
+   float: right;
+   padding:10px 37px;
+   margin: 0.1em;
+   border: 0.15em solid #CCCCCC;
+   box-sizing: border-box;
+   text-decoration: none;
    font-family: var(--general-font-family);
+   font-size: var(--buttons-font-size);
    color: var(--general-font-color);
-   width: 100%;
-   padding: 12px;
-   border: 1px solid var(--general-font-color);
-   border-radius: 4px;
-   resize: vertical;
+   background-color: #CCCCCC;
+   text-align: center;
+   position: relative;
 }
 
-textarea {
-   font-family: var(--general-font-family-output);   
-   font-size: var(--text-area-font-size);
+#copyBtn:hover {
+   border-color:#7a7a7a;
 }
 
-input[type=submit], input[type=reset], input[type=button] {
-   /*bestcssbuttongenerator.com*/
-   font-family: var(--general-font-family);
-	box-shadow: inset 0px 1px 3px 0px #91b8b3;
-	background: linear-gradient(to bottom, #768d87 5%, #6c7c7c 100%);
-	background-color: #768d87;
-	border-radius: 5px;
-	border: 1px solid #566963;
-	display: inline-block;
-	cursor: pointer;
-	color: #ffffff;
-	font-size: 15px;
-	font-weight: bold;	
-	text-decoration: none;
-	text-shadow: 0px -1px 0px #2b665e;
-   padding: 12px 20px;
-   margin: 10px 0 10px 0;
-   width: 100px;
- }
-
-input[type=button] {
-   width: 100%;   
-}
-
-input[type=submit]:hover, input[type=reset]:hover, input[type=button]:hover {
-	background:linear-gradient(to bottom, #6c7c7c 5%, #768d87 100%);
-	background-color:#6c7c7c;
+#copyBtn:active {
+   background-color:#999999;
 }
 
 /* tooltip button copy clipboard */
@@ -147,7 +100,7 @@ input[type=submit]:hover, input[type=reset]:hover, input[type=button]:hover {
    padding: 5px;
    position: absolute;
    z-index: 1;
-   bottom: 105%;
+   bottom: 150%;
    left: 50%;
    margin-left: -75px;
    opacity: 0;
@@ -170,10 +123,62 @@ input[type=submit]:hover, input[type=reset]:hover, input[type=button]:hover {
    opacity: 1;
 }
 
+.slider {
+   -webkit-appearance: none;
+   width: 100%;
+   height: 15px;
+   border-radius: 5px;
+   background: #d3d3d3;
+   outline: none;
+   opacity: 0.7;
+   -webkit-transition: .2s;
+   transition: opacity .2s;
+ }
+
+.slider:hover {
+   opacity: 1;
+}
+ 
+.slider::-webkit-slider-thumb {
+   -webkit-appearance: none;
+   appearance: none;
+   width: 25px;
+   height: 25px;
+   border-radius: 50%;
+   background: gray;
+   cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+   width: 25px;
+   height: 25px;
+   border-radius: 50%;
+   background: gray;
+   cursor: pointer;
+}
+
+.slider-container {
+   margin: 0;
+   padding: 10px 0px 20px 0px;
+   border-bottom: 2px solid var(--line-header-color-light);
+   width: 100%;
+}
+
+.refresh {
+   cursor: pointer;
+   font-size: 35px;
+   transition: all 0.8s;
+}
+
+.refresh:hover {
+   transform: scale(1.1);
+}
+
 .col-15 {
    float: left;
    width: 15%;
    margin-top: 6px;
+   text-align: right;
 }
  
  .col-85 {
@@ -194,7 +199,7 @@ input[type=submit]:hover, input[type=reset]:hover, input[type=button]:hover {
    clear: both;   
 }
 
-.footer {   
+.footer {
    height: 15%;
    text-align: center;   
    font-size: var(--footer-font-size);
@@ -202,51 +207,71 @@ input[type=submit]:hover, input[type=reset]:hover, input[type=button]:hover {
    justify-content: center;
    flex-direction: column;
    align-items: center;
+   margin-top: 30px;
+   padding: 20px 0 20px 0;
 }
 
 .footer h2 {
-   padding: 0.5em 0 0 0;   
+   padding: 0.3em 0 0.3em 0;   
 }
 
 .footer h2, a {
    margin: 0;
+   color: var(--general-font-color);   
+}
+
+.footer a {
+   font-size: 30px;
+   text-decoration: none;
    color: var(--general-font-color);
 }
 
-.footer a:hover {
-   color: #224780;
-}
+.footer-social-link {
+   display: inline-flex;
+   color: var(--general-font-color-1);
+   margin: 0 0.8em 0 0.8em;
+   text-decoration: none;
+   transition: all 0.3s;
+ }
+ 
+ .footer-social-link:hover {
+   transform: translate(0px, -5px);
+ }
 
 @media screen and (min-width: 768px) {
    :root {
       --general-font-size: 1.0em;
       --buttons-font-size: 0.8em;
       --footer-font-size: 0.8em;
+      --password-font-size: 1.5em;
    }
 }
 
 @media screen and (max-width: 600px) {
-   .col-15, .col-85, input[type=submit], input[type=reset] {
-      width: 100%;
-      margin-top: 10px;
-      margin-bottom: 0px;
+   .general-content {
+       margin: 0px 30px 0px 30px;
+       padding: 0;
+   }
+   
+   #copyBtn {
+       margin-top: 0px;      
+       margin-bottom: 0px;
+       width: 100%;
    }
 
-   input[type=button] {
-      width: 100%;
-      margin-top: 5px;      
-      margin-bottom: 0px;
+   .col-15, .col-85 {
+       margin-top: 0px;      
    }
 
-      .col-15, .col-85 {
-      margin-top: 0px;      
-   }
-
-      .col-100 {
-      margin-top: 10px;
+   .col-100 {
+       margin-top: 10px;
    }
 
    p {
-      margin-bottom: 10px;
+       margin-bottom: 10px;
+   }
+
+   .password-container #output-password {
+       font-size: smaller;
    }
 }

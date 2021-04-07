@@ -1,109 +1,57 @@
-// Declarations for password generator
-const intNumPwd = document.querySelector('#numpwd');
-const intLength = document.querySelector('#pwdlenght');
-const retPassword = document.querySelector("#lblresult");
-const button = document.querySelector('#submitBtn');
-const resetBtn = document.querySelector('#resetBtn');
 const clipboardBtn = document.querySelector('#copyBtn');
+const retPassword = document.querySelector("#output-password");
+const button = document.querySelector('#submitBtn');
+const intNumPwd = 1;
 
-// Declarations for title animation, source github => kubowania / typewriter
-const textDisplay = document.getElementById('banner');
-const title = [' Password Generator', ' Thanks for use it'];
-let i = 0
-let j = 0 
-let currentPhrase = []
-let isDeleting = false
-let isEnd = false
+//Slider functions
+let slider_pwdlenght = document.getElementById("pwdlenght")
+let output_pwdlenght = document.getElementById("span-pwdlenght")
+output_pwdlenght.innerHTML = slider_pwdlenght.value;
+
+slider_pwdlenght.oninput = function() {
+  let slider_value = this.value;
+  let ret_value = 0;
+  
+  ret_value = this.value < 10 ? slider_value.fontcolor("red") : slider_value.fontcolor("#111111"); 
+
+  output_pwdlenght.innerHTML = ret_value;
+}
 
 // Password generator functions
 button.addEventListener('click', (ev) => {
-   const CHARS = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTVWXYZ0123456789._?#$%&=),!-;*+([]{}";
-   let strText = "";
-   let arrPasswords = [];
-   
-   ev.preventDefault();   
+  const CHARS = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTVWXYZ0123456789._?#$%&=),!-;*+([]{}|";
+  let strText = "";
+  let arrPasswords = [];
+  
+  ev.preventDefault();
 
-   if (validate_form() == false) {
-      document.getElementById('lblresult').innerHTML = "Number of passwords must between 1 - 50 | length password must be between 1 - 30"
-      return false;
-   }   
-
-   for (var intIterations = 1; intIterations <= intNumPwd.value; intIterations++) {
-      strText = "";
-      for (var intCont = 1; intCont <= intLength.value; intCont++) {
-         strText += CHARS.charAt(Math.floor(Math.random() * CHARS.length));
-      }
-      arrPasswords.push(strText);
-   }
-   document.getElementById('lblresult').innerHTML = arrPasswords.join("\n");
-   return true;
+  for (var intIterations = 1; intIterations <= 1; intIterations++) {
+     strText = "";
+     for (var intCont = 1; intCont <= slider_pwdlenght.value; intCont++) {
+        strText += CHARS.charAt(Math.floor(Math.random() * CHARS.length));
+     }
+     arrPasswords.push(strText);
+  }
+  document.getElementById('output-password').innerHTML = arrPasswords.join("\n");
+  return true;
 });
-
-resetBtn.addEventListener('click', () => {
-   document.getElementById('lblresult').innerHTML = 'Output';
-});
-
-function validate_form() {
-   if ((parseInt(intNumPwd.value) > parseInt(intNumPwd.max)) || (parseInt(intLength.value) > parseInt(intLength.max))) {
-      return false;
-   }
-
-   return true;
-};
 
 // Copy to clipboard functions
 clipboardBtn.addEventListener('click', (ev) => {
-   let copyText = document.getElementById("lblresult");
-   copyText.select();
-   copyText.setSelectionRange(0, 99999);
-   document.execCommand("copy");
+  let copyText = document.getElementById("output-password");
+  let textArea = document.createElement("textarea");
 
-   let tooltip = document.getElementById("myTooltip");
-   tooltip.innerHTML = "Copied!";
+  textArea.value = copyText.textContent;
+  document.body.appendChild(textArea);
+  textArea.select();
+  document.execCommand("Copy");
+  textArea.remove();
+
+  let tooltip = document.getElementById("myTooltip");
+  tooltip.innerHTML = "Copied!";
 });
 
 function outFunc() {
-   var tooltip = document.getElementById("myTooltip");
-   tooltip.innerHTML = "Copy to clipboard";
- }
-
-// Title animation functions
-function loop () {
-   isEnd = false;
-   textDisplay.innerHTML = currentPhrase.join('');
- 
-   if (i < title.length) {
- 
-     if (!isDeleting && j <= title[i].length) {
-       currentPhrase.push(title[i][j]);
-       j++;
-       textDisplay.innerHTML = currentPhrase.join('');
-     }
- 
-     if(isDeleting && j <= title[i].length) {
-       currentPhrase.pop(title[i][j]);
-       j--;
-       textDisplay.innerHTML = currentPhrase.join('');
-     }
- 
-     if (j == title[i].length) {
-       isEnd = true;
-       isDeleting = true;
-     }
- 
-     if (isDeleting && j === 0) {
-       currentPhrase = [];
-       isDeleting = false;
-       i++;
-       if (i === title.length) {
-         i = 0;
-       }
-     }
-   }
-   const spedUp = Math.random() * (80 - 50) + 50;
-   const normalSpeed = Math.random() * (300 -200) + 200;
-   const time = isEnd ? 2000 : isDeleting ? spedUp : normalSpeed;
-   setTimeout(loop, time);
- };
- 
- loop();
+  var tooltip = document.getElementById("myTooltip");
+  tooltip.innerHTML = "Copy to clipboard";
+}
