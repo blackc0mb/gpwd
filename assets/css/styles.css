@@ -9,10 +9,17 @@
    --buttons-font-size: 1.0em;
    --footer-font-size: 0.8em;
    --password-font-size: 1.2em;
+
+   --general-background-color: #F3F3F3;
+   --button-color: #0F1F38;   
 }
 
 * {
    box-sizing: border-box;
+}
+
+html {
+   background-color: var(--general-background-color);
 }
 
 body {
@@ -40,6 +47,10 @@ h1, h2, h3 {
    padding: 0px 210px 0px 210px;
 }
 
+.subtitle-container {
+   padding-top: 10px;
+}
+
 .subtitle-container p {
    margin: 0;
    padding: 10px 0 15px 0;
@@ -57,30 +68,32 @@ h1, h2, h3 {
 
 #copyBtn {
    width: 15%;
-   margin-top: 5px;      
+   margin-top: 5px;
    margin-bottom: 0px;
-
    border-radius: 10px;
    float: right;
-   padding:10px 37px;
+   padding: 10px 37px;
    margin: 0.1em;
-   border: 0.15em solid #CCCCCC;
+   border: 0.15em solid var(--button-color);
    box-sizing: border-box;
    text-decoration: none;
    font-family: var(--general-font-family);
    font-size: var(--buttons-font-size);
-   color: var(--general-font-color);
-   background-color: #CCCCCC;
+   font-weight: 500;
+   color: var(--general-background-color);
+   background-color: var(--button-color);
    text-align: center;
-   position: relative;
+   position: relative;   
+   transition: color 0.25s ease-in-out, transform 0.25s ease-in-out;
 }
 
 #copyBtn:hover {
-   border-color:#7a7a7a;
+   transform: scale(1.05);   
+   color: var(--general-background-color);
 }
 
 #copyBtn:active {
-   background-color:#999999;
+   transform: scale(.9);
 }
 
 /* tooltip button copy clipboard */
@@ -91,8 +104,8 @@ h1, h2, h3 {
 .tooltip .tooltiptext {
    visibility: hidden;
    width: 140px;
-   background-color: #555;
-   color: #fff;
+   color: var(--general-background-color);
+   background-color: var(--button-color);
    text-align: center;
    border-radius: 6px;
    padding: 5px;
@@ -113,7 +126,7 @@ h1, h2, h3 {
    margin-left: -5px;
    border-width: 5px;
    border-style: solid;
-   border-color: #555 transparent transparent transparent;
+   border-color: var(--button-color) transparent transparent transparent;
 }
  
 .tooltip:hover .tooltiptext {
@@ -143,7 +156,7 @@ h1, h2, h3 {
    width: 25px;
    height: 25px;
    border-radius: 50%;
-   background: gray;
+   background: var(--button-color);
    cursor: pointer;
 }
 
@@ -151,7 +164,7 @@ h1, h2, h3 {
    width: 25px;
    height: 25px;
    border-radius: 50%;
-   background: gray;
+   background: var(--button-color);
    cursor: pointer;
 }
 
@@ -206,7 +219,7 @@ h1, h2, h3 {
    flex-direction: column;
    align-items: center;
    margin-top: 30px;
-   padding: 20px 0 20px 0;
+   padding: 20px 0 20px 0;   
 }
 
 .footer h2 {
