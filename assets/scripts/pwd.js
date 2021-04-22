@@ -24,12 +24,12 @@ slider_pwdlenght.oninput = function () {
   if (this.value < 10) {
     ret_value = slider_value.fontcolor(red_color);
     label_pwdlenght.style.color = red_color;
-    label_icon.innerHTML = "<i class='fa fa-exclamation-circle fa-2x'></i>";
+    label_icon.innerHTML = "<i class='fa fa-exclamation-circle fa-2x'></i>&nbsp";
     label_icon.style.color = red_color;
   } else {
     ret_value = slider_value.fontcolor(ok_color);
     label_pwdlenght.style.color = ok_color;
-    label_icon.innerHTML = "<i class='fa fa-check-circle fa-2x'></i>";
+    label_icon.innerHTML = "<i class='fa fa-check-circle fa-2x'></i>&nbsp";
     label_icon.style.color = ok_color;
   }
 
