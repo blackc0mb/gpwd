@@ -34,15 +34,19 @@ slider_pwdlenght.oninput = function () {
   }
 
   output_pwdlenght.innerHTML = ret_value;
+  pwdGen();
 }
 
 // Password generator functions
 button.addEventListener('click', (ev) => {
+  ev.preventDefault();
+  pwdGen();
+});
+
+function pwdGen () {
   const CHARS = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTVWXYZ0123456789._?#$%&=),!-;*+([]{}|";
   let strText = "";
   let arrPasswords = [];
-
-  ev.preventDefault();
 
   for (var intIterations = 1; intIterations <= 1; intIterations++) {
     strText = "";
@@ -52,8 +56,7 @@ button.addEventListener('click', (ev) => {
     arrPasswords.push(strText);
   }
   document.getElementById('output-password').innerHTML = arrPasswords.join("\n");
-  return true;
-});
+}
 
 // Copy to clipboard functions
 clipboardBtn.addEventListener('click', (ev) => {
