@@ -12,4 +12,4 @@ This project born as a personal need to make strong passwords quickly only for p
 
 
 ## How to use it ❓  
-You just visit <a href="https://tmorales.dev/gpwd/" target="_blank">🔗 this link</a> then specify specify how many passwords as well as the length, after that you just have to click the **“clipboard” button** and that’s it.   
+You just visit <a href="https://tmorales.dev/gpwd/" target="_blank">🔗 this link,</a> then select the password length, after that you just have to click the **“clipboard” button** and that’s it.
