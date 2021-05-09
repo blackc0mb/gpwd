@@ -30,6 +30,10 @@ body {
    padding: 0;
 }
 
+.material-icons.md-24 { 
+   font-size: 24px; 
+}
+
 .header {
    font-size: var(--general-font-size);
    background-color: var(--button-color);

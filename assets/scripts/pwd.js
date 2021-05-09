@@ -9,6 +9,7 @@ let output_pwdlenght = document.getElementById("span-pwdlenght");
 
 let label_pwdlenght = document.getElementById("span-label-pwdlenght");
 let label_icon = document.getElementById("span-label-icon");
+let output_password = document.getElementById("output-password");
 
 output_pwdlenght.innerHTML = slider_pwdlenght.value;
 
@@ -26,11 +27,13 @@ slider_pwdlenght.oninput = function () {
     label_pwdlenght.style.color = red_color;
     label_icon.innerHTML = "<i class='fa fa-exclamation-circle fa-2x'></i>&nbsp";
     label_icon.style.color = red_color;
+    output_password.style.color = red_color;
   } else {
     ret_value = slider_value.fontcolor(ok_color);
     label_pwdlenght.style.color = ok_color;
     label_icon.innerHTML = "<i class='fa fa-check-circle fa-2x'></i>&nbsp";
     label_icon.style.color = ok_color;
+    output_password.style.color = ok_color;
   }
 
   output_pwdlenght.innerHTML = ret_value;
