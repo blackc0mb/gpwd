@@ -47,7 +47,7 @@ button.addEventListener('click', (ev) => {
 })
 
 function pwdGen () {
-  const CHARS = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTVWXYZ0123456789._?#$%&=),!-;*+([]{}|"
+  const CHARS = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTVWXYZ0123456789._?#$%&=),!-;*+([]{}|:"
   let strText = ""
   let arrPasswords = []
 
